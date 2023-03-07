@@ -3,6 +3,16 @@
 /// For examples see Material Design color system: https://m2.material.io/design/color/the-color-system.html
 
 :root {
-    --color-primary: #5721f2;
-    --color-on-surface: #000;
+    --clr-background: #0F162D;
+    --clr-feature-heliotrope: rgb(202, 89, 255, 0.1);
+    --clr-feature-blue: rgb(108, 124, 255, 0.1);
+    --clr-feature-cyan: rgb(42, 255, 255, 0.1);
+    --clr-feature-broom: rgb(255, 246, 41, 0.1);
+    --clr-feature-background: #272D42;
+    --clr-text: #FFFFFF;
+
+    --rounding-desktop-big: 24px;
+    --rounding-desktop-small: 16px;
+    --rounding-mobile-big: 20px;
+    --rounding-mobile-small: 14px;
 }
