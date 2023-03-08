@@ -5,11 +5,165 @@
 @import "styles/root.scss";
 @import "styles/fonts.scss";
 
+$tablet-breakpoint: 1180px;
+$mobile-breakpoint: 500px;
+
 body {
-  font-family: 'Roboto', sans-serif;
-  color: var(--color-primary);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--clr-text);
+  background-color: var(--clr-background);
 }
 
-p {
-  color: var(--color-on-surface);
+#home-page {
+  display: flex;
+  gap: 109px;
+  margin: 159px auto;
+  justify-content: center;
+
+  @media (max-width: $tablet-breakpoint) {
+    flex-direction: column;
+    max-width: 496px;
+    gap: 24px;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    max-width: 100%;
+    margin: 48px 16px 64px;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 467px;
+
+  &__title {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.2%;
+    margin: 0;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+  }
+  
+  @media (max-width: $mobile-breakpoint) {
+    gap: 16px;
+    max-width: 100%;
+
+    &__title {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+}
+
+@mixin badge {
+  border-radius: var(--rounding-desktop-small);
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: $tablet-breakpoint) {
+    border-radius: var(--rounding-mobile-small);
+    width: 56px;
+    height: 56px;
+  }
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 268px);
+  column-gap: 24px;
+  row-gap: 31px;
+
+  &__card {
+    background-color: var(--clr-feature-background);
+    border-radius: var(--rounding-desktop-big);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+  }
+
+  &__badge {
+    &-pink {
+      background-color: var(--clr-feature-heliotrope);
+      @include badge();
+    }
+
+    &-blue {
+      background-color: var(--clr-feature-blue);      
+      @include badge();
+    }
+
+    &-green {
+      background-color: var(--clr-feature-cyan);
+      @include badge();
+    }
+
+    &-yellow {
+      background-color: var(--clr-feature-broom);
+      @include badge();
+    }
+
+    &-img {
+      width: 32px;
+      height: 32px;
+    } 
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    margin: 16px auto;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 150%;
+    margin: 0 16px;
+    opacity: 0.5;
+    text-align: center;
+  }
+
+  @media (max-width: $tablet-breakpoint) {
+    grid-template-columns: repeat(2, 240px);
+    column-gap: 16px;
+    row-gap: 16px;
+    
+    &__card {
+      border-radius: var(--rounding-mobile-big);
+      padding: 20px 0;
+    }
+
+    &__badge {
+      &-img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    &__description {
+      font-size: 14px;
+      line-height: 157%;
+      margin: 0 17px 0 14px;
+    }
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    grid-template-columns: 1fr;
+
+    &__description {
+      margin: 0 20px;
+    }
+  }
 }
