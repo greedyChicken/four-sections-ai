@@ -24,6 +24,7 @@ body {
     flex-direction: column;
     max-width: 496px;
     gap: 24px;
+    margin: 247px auto;
   }
 
   @media (max-width: $mobile-breakpoint) {
@@ -42,7 +43,7 @@ body {
     font-weight: 500;
     font-size: 48px;
     line-height: 56px;
-    letter-spacing: -0.2%;
+    letter-spacing: -0.002em;
     margin: 0;
   }
 
@@ -52,10 +53,12 @@ body {
     margin: 0;
   }
   
-  @media (max-width: $mobile-breakpoint) {
+  @media (max-width: $tablet-breakpoint) {
     gap: 16px;
     max-width: 100%;
-
+  }
+  
+  @media (max-width: $mobile-breakpoint) {
     &__title {
       font-size: 32px;
       line-height: 40px;
@@ -70,6 +73,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: center;
 
   @media (max-width: $tablet-breakpoint) {
     border-radius: var(--rounding-mobile-small);
@@ -89,7 +93,7 @@ body {
     border-radius: var(--rounding-desktop-big);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 16px;
     padding: 24px 0;
   }
 
@@ -123,13 +127,14 @@ body {
   &__title {
     font-weight: 500;
     font-size: 20px;
-    line-height: 120%;
-    margin: 16px auto;
+    line-height: 24px;
+    margin: 0;
+    text-align: center;
   }
 
   &__description {
     font-size: 16px;
-    line-height: 150%;
+    line-height: 24px;
     margin: 0 16px;
     opacity: 0.5;
     text-align: center;
@@ -154,8 +159,7 @@ body {
 
     &__description {
       font-size: 14px;
-      line-height: 157%;
-      margin: 0 17px 0 14px;
+      line-height: 22px;
     }
   }
 
