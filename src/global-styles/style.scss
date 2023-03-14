@@ -14,58 +14,6 @@ body {
   background-color: var(--clr-background);
 }
 
-#home-page {
-  display: flex;
-  gap: 109px;
-  margin: 159px auto;
-  justify-content: center;
-
-  @media (max-width: $tablet-breakpoint) {
-    flex-direction: column;
-    max-width: 496px;
-    gap: 24px;
-    margin: 247px auto;
-  }
-
-  @media (max-width: $mobile-breakpoint) {
-    max-width: 100%;
-    margin: 48px 16px 64px;
-  }
-}
-
-.description {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  max-width: 467px;
-
-  &__title {
-    font-weight: 500;
-    font-size: 48px;
-    line-height: 56px;
-    letter-spacing: -0.002em;
-    margin: 0;
-  }
-
-  &__text {
-    font-size: 16px;
-    line-height: 24px;
-    margin: 0;
-  }
-  
-  @media (max-width: $tablet-breakpoint) {
-    gap: 16px;
-    max-width: 100%;
-  }
-  
-  @media (max-width: $mobile-breakpoint) {
-    &__title {
-      font-size: 32px;
-      line-height: 40px;
-    }
-  }
-}
-
 @mixin badge {
   border-radius: var(--rounding-desktop-small);
   width: 64px;
@@ -82,92 +30,144 @@ body {
   }
 }
 
-.features {
-  display: grid;
-  grid-template-columns: repeat(2, 268px);
-  column-gap: 24px;
-  row-gap: 31px;
+#home-page {
+  display: flex;
+  gap: 109px;
+  margin: 159px auto;
+  justify-content: center;
 
-  &__card {
-    background-color: var(--clr-feature-background);
-    border-radius: var(--rounding-desktop-big);
+  .description {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 24px 0;
+    gap: 24px;
+    max-width: 467px;
+  
+    &__title {
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 56px;
+      letter-spacing: -0.002em;
+      margin: 0;
+    }
+  
+    &__text {
+      font-size: 16px;
+      line-height: 24px;
+      margin: 0;
+    }
   }
 
-  &__badge {
-    &-pink {
-      background-color: var(--clr-feature-heliotrope);
-      @include badge();
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, 268px);
+    column-gap: 24px;
+    row-gap: 31px;
+  
+    &__card {
+      background-color: var(--clr-feature-background);
+      border-radius: var(--rounding-desktop-big);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px 0;
     }
-
-    &-blue {
-      background-color: var(--clr-feature-blue);      
-      @include badge();
+  
+    &__badge {
+      &-pink {
+        background-color: var(--clr-feature-heliotrope);
+        @include badge();
+      }
+  
+      &-blue {
+        background-color: var(--clr-feature-blue);      
+        @include badge();
+      }
+  
+      &-green {
+        background-color: var(--clr-feature-cyan);
+        @include badge();
+      }
+  
+      &-yellow {
+        background-color: var(--clr-feature-broom);
+        @include badge();
+      }
+  
+      &-img {
+        width: 32px;
+        height: 32px;
+      } 
     }
-
-    &-green {
-      background-color: var(--clr-feature-cyan);
-      @include badge();
+  
+    &__title {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      margin: 0;
+      text-align: center;
     }
-
-    &-yellow {
-      background-color: var(--clr-feature-broom);
-      @include badge();
+  
+    &__description {
+      font-size: 16px;
+      line-height: 24px;
+      margin: 0 16px;
+      opacity: 0.5;
+      text-align: center;
     }
-
-    &-img {
-      width: 32px;
-      height: 32px;
-    } 
-  }
-
-  &__title {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    margin: 0;
-    text-align: center;
-  }
-
-  &__description {
-    font-size: 16px;
-    line-height: 24px;
-    margin: 0 16px;
-    opacity: 0.5;
-    text-align: center;
   }
 
   @media (max-width: $tablet-breakpoint) {
-    grid-template-columns: repeat(2, 240px);
-    column-gap: 16px;
-    row-gap: 16px;
-    
-    &__card {
-      border-radius: var(--rounding-mobile-big);
-      padding: 20px 0;
+    flex-direction: column;
+    max-width: 496px;
+    gap: 24px;
+    margin: 247px auto;
+
+    .description {
+      gap: 16px;
+      max-width: 100%;
     }
 
-    &__badge {
-      &-img {
-        width: 28px;
-        height: 28px;
+    .features {
+      grid-template-columns: repeat(2, 240px);
+      column-gap: 16px;
+      row-gap: 16px;
+      
+      &__card {
+        border-radius: var(--rounding-mobile-big);
+        padding: 20px 0;
       }
-    }
-
-    &__description {
-      font-size: 14px;
-      line-height: 22px;
+  
+      &__badge {
+        &-img {
+          width: 28px;
+          height: 28px;
+        }
+      }
+  
+      &__description {
+        font-size: 14px;
+        line-height: 22px;
+      }
     }
   }
 
   @media (max-width: $mobile-breakpoint) {
-    grid-template-columns: 1fr;
+    max-width: 100%;
+    margin: 48px 16px 64px;
 
-    &__description {
-      margin: 0 20px;
+    .description {
+      &__title {
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+
+    .features {
+      grid-template-columns: 1fr;
+  
+      &__description {
+        margin: 0 20px;
+      }
     }
   }
 }
